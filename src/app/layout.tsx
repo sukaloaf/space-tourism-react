@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bellefair.variable} ${barlow.variable} ${barlow_condensed.variable} bg-primary container mx-auto py-10`}
+        className={`${bellefair.variable} ${barlow.variable} ${barlow_condensed.variable}`}
       >
         {children}
       </body>

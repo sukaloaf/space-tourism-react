@@ -13,15 +13,17 @@
   }
 }
 
-/* Fonts */
+/* Font Family */
 h1,
 h2,
 h3,
-h4 {
+h4,
+.slider2 {
   font-family: var(--font-bellefair);
 }
 
 h5,
+li,
 .sub-heading2,
 .nav-text {
   font-family: var(--font-barlow_condensed);
@@ -30,4 +32,86 @@ h5,
 p,
 .sub-heading1 {
   font-family: var(--font-barlow);
+}
+
+/* Font Size */
+h1 {
+  font-size: 9.375rem;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 6.25rem;
+  line-height: 1;
+}
+
+h3 {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+h4 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+h5 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  letter-spacing: 0.25em;
+}
+
+.sub-heading1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.sub-heading2 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+.nav-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+li {
+  letter-spacing: 0.25em;
+}
+
+/* Buttons */
+.explore-button {
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  place-items: center;
+  padding: 0 2em;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  text-decoration: none;
+}
+
+.explore-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: hsl(var(--color-three) / 0.1);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 500ms linear, transform 750ms ease-in-out;
+}
+
+.explore-button:hover::after {
+  opacity: 1;
+  transform: scale(1.5);
 }
