@@ -17,11 +17,11 @@ export default function Home() {
       const screenWidth = window.innerWidth;
 
       if (screenWidth <= 640) {
-        setBackgroundImage(homeMobile);
+        setBackgroundImage(homeMobile as any);
       } else if (screenWidth <= 1024) {
-        setBackgroundImage(homeTablet);
+        setBackgroundImage(homeTablet as any);
       } else {
-        setBackgroundImage(homeDesktop);
+        setBackgroundImage(homeDesktop as any);
       }
     };
 
@@ -44,9 +44,10 @@ export default function Home() {
         alt="background image"
         quality={100}
         fill
-        sizes="100vw"
+        objectFit="cover"
+        objectPosition="absolute"
+        priority
         style={{
-          objectFit: "cover",
           zIndex: -1,
         }}
       />
