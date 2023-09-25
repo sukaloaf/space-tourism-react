@@ -44,16 +44,16 @@ export default function Home() {
         alt="background image"
         quality={100}
         fill
-        objectFit="cover"
-        objectPosition="absolute"
-        priority
+        loading="eager"
+        sizes="100vw"
         style={{
+          objectFit: "cover",
           zIndex: -1,
         }}
       />
       <div>
         <Navbar />
-        <h1>home</h1>
+        <h1>H</h1>
       </div>
     </>
   );
