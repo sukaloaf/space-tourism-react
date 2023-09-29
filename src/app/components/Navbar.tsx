@@ -37,8 +37,8 @@ export default function Navbar() {
           <Image src={logo} alt="logo" width={48}></Image>
         </div>
         <div className="flex items-center">
-          <hr className="bg-three/25 h-px w-2/6 border-none absolute left-44 z-10 hidden lg:block" />
-          <button onClick={toggleMenu} className="z-10">
+          <hr className="bg-three/25 h-px w-2/6 border-none absolute left-44 z-20 hidden lg:block" />
+          <button onClick={toggleMenu} className="z-20">
             <Image
               src={isOpen ? close : hamburger}
               alt={isOpen ? "Close menu" : "Open menu"}
@@ -48,7 +48,7 @@ export default function Navbar() {
           </button>
         </div>
         {isOpen && (
-          <div className="absolute top-0 right-0 bg-three/10 backdrop-blur-lg w-2/3 h-screen z-0">
+          <div className="absolute top-0 right-0 bg-three/10 backdrop-blur-lg w-2/3 h-screen z-10">
             <ul className="text-three mt-36 ml-8 text-base flex flex-col justify-evenly gap-8">
               <li tabIndex={2}>
                 <a

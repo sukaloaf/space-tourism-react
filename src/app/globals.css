@@ -18,19 +18,19 @@ h1,
 h2,
 h3,
 h4,
-.slider2 {
+.slider2,
+.subheading1 {
   font-family: var(--font-bellefair);
 }
 
 h5,
 li,
-.sub-heading2,
+.subheading2,
 .nav-text {
   font-family: var(--font-barlow_condensed);
 }
 
-p,
-.sub-heading1 {
+.body-text {
   font-family: var(--font-barlow);
 }
 
@@ -61,12 +61,12 @@ h5 {
   letter-spacing: 0.25em;
 }
 
-.sub-heading1 {
+.subheading1 {
   font-size: 1.875rem;
   line-height: 2.25rem;
 }
 
-.sub-heading2 {
+.subheading2 {
   font-size: 0.875rem;
   line-height: 1.25rem;
   letter-spacing: 0.05em;
@@ -78,13 +78,109 @@ h5 {
   letter-spacing: 0.05em;
 }
 
-p {
+.body-text {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
 li {
   letter-spacing: 0.25em;
+}
+
+/* Font size for tablet */
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 6.25rem;
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+
+  h4 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  h5 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    letter-spacing: 0.25em;
+  }
+
+  .subheading2 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  li {
+    letter-spacing: 0.25em;
+  }
+}
+
+/* Font size for mobile */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 4.5rem;
+    line-height: 1;
+    letter-spacing: 0.05em;
+  }
+
+  h2 {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+    line-height: 1;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .subheading2 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .body-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  li {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }
 
 /* Buttons */

@@ -1,60 +1,29 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import homeDesktop from "../assets/home/background-home-desktop.jpg";
-import homeTablet from "../assets/home/background-home-tablet.jpg";
-import homeMobile from "../assets/home/background-home-mobile.jpg";
-import { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
+import "../app/styles/home.css";
 
 export default function Home() {
-  const [backgroundImage, setBackgroundImage] = useState("");
-
-  useEffect(() => {
-    // Function to determine the appropriate background image based on screen width
-    const updateBackgroundImage = () => {
-      const screenWidth = window.innerWidth;
-
-      if (screenWidth <= 640) {
-        setBackgroundImage(homeMobile as any);
-      } else if (screenWidth <= 1024) {
-        setBackgroundImage(homeTablet as any);
-      } else {
-        setBackgroundImage(homeDesktop as any);
-      }
-    };
-
-    // Initial call to set the background image
-    updateBackgroundImage();
-
-    // Event listener to update the background image on window resize
-    window.addEventListener("resize", updateBackgroundImage);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", updateBackgroundImage);
-    };
-  }, []);
-
   return (
-    <>
-      <Image
-        src={backgroundImage}
-        alt="background image"
-        quality={100}
-        fill
-        loading="eager"
-        sizes="100vw"
-        style={{
-          objectFit: "cover",
-          zIndex: -1,
-        }}
-      />
-      <div>
-        <Navbar />
-        <h1>H</h1>
+    <div className="background-container">
+      <Navbar />
+      <div className="flex flex-col items-center text-center mt-12 md:mt-28 lg:flex-row lg:justify-around lg:mt-48">
+        <div className="px-10 lg:w-[450px] lg:px-0">
+          <h5 className="text-secondary">SO, YOU WANT TO TRAVEL TO</h5>
+          <h1 className="text-three m-7">SPACE</h1>
+          <p className="text-secondary body-text">
+            Let’s face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we’ll give you a truly out of this
+            world experience!
+          </p>
+        </div>
+        <div>
+          <button className="explore-button bg-three color-primary tracking-widest w-40 mt-16 md:w-60 md:mt-40 lg:w-72">
+            <h4>EXPLORE</h4>
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

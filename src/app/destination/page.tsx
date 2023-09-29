@@ -1,56 +1,86 @@
 "use client";
 
 import Navbar from "../components/Navbar";
+import "../styles/destination.css";
+import data from "../data.json";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import destinationDesktop from "../../assets/destination/background-destination-desktop.jpg";
-import destinationTablet from "../../assets/destination/background-destination-tablet.jpg";
-import destinationMobile from "../../assets/destination/background-destination-mobile.jpg";
+import React, { useState } from "react";
+import moon from "../../assets/destination/image-moon.webp";
 
 export default function Destination() {
-  const [backgroundImage, setBackgroundImage] = useState("");
+  // Select active li
+  const [selectedDestination, setSelectedDestination] = useState("MOON");
 
-  useEffect(() => {
-    // Function to determine the appropriate background image based on screen width
-    const updateBackgroundImage = () => {
-      const screenWidth = window.innerWidth;
+  // retrieve destination data based on selection
+  const selectedDestinationData = data.destinations.find(
+    (destination) => destination.name.toUpperCase() === selectedDestination
+  );
 
-      if (screenWidth <= 640) {
-        setBackgroundImage(destinationMobile as any);
-      } else if (screenWidth <= 1024) {
-        setBackgroundImage(destinationTablet as any);
-      } else {
-        setBackgroundImage(destinationDesktop as any);
-      }
-    };
+  const handleDestinationChange = (
+    destination: React.SetStateAction<string>
+  ) => {
+    setSelectedDestination(destination);
+  };
 
-    // Initial call to set the background image
-    updateBackgroundImage();
+  const selectedImageSource = selectedDestinationData?.images?.webp || "";
 
-    // Event listener to update the background image on window resize
-    window.addEventListener("resize", updateBackgroundImage);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", updateBackgroundImage);
-    };
-  }, []);
+  const destinations = ["MOON", "MARS", "EUROPA", "TITAN"];
 
   return (
-    <>
-      <Image
-        src={backgroundImage}
-        alt="background image"
-        quality={100}
-        fill
-        sizes="100vw"
-        style={{
-          objectFit: "cover",
-          zIndex: -1,
-        }}
-      />
+    <div className="background-container">
       <Navbar />
-      <h1>D</h1>
-    </>
+      <div className="flex flex-col items-center mt-8">
+        <h5 className="text-three">
+          <span className="text-three/25 mr-3 font-extrabold">01</span>PICK YOUR
+          DESTINATION
+        </h5>
+        <Image
+          src={selectedImageSource}
+          alt="planet image"
+          width={100}
+          height={100}
+          className="w-44 my-8"
+        />
+        <div>
+          <ul className="flex text-center justify-evenly text-secondary text-base gap-6">
+            {destinations.map((destination, index) => (
+              <li
+                key={index}
+                tabIndex={2}
+                className={`cursor-pointer flex items-start h-9 ${
+                  selectedDestination === destination
+                    ? "text-three border-b-4 border-three cursor-pointer flex items-start h-9 hover:border-b-4 hover:border-neutral-400 active:border-b-4 active:border-three active:text-three focus:border-b-4 focus:border-three focus:text-three"
+                    : "cursor-pointer flex items-start h-9 hover:border-b-4 hover:border-neutral-400 active:border-b-4 active:border-three active:text-three focus:border-b-4 focus:border-three focus:text-three"
+                }`}
+                onClick={() => handleDestinationChange(destination)}
+              >
+                {destination}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <h2 className="text-three my-3">
+          {selectedDestinationData?.name.toUpperCase()}
+        </h2>
+        <p className="body-text text-secondary text-center px-8">
+          {selectedDestinationData?.description}
+        </p>
+        <hr className="h-px w-10/12 my-6 bg-three/25 border-0" />
+        <div className="text-center flex flex-col">
+          <div className="mt-2">
+            <p className="subheading2 text-secondary">AVG. DISTANCE</p>
+            <p className="subheading1 text-three mt-2">
+              {selectedDestinationData?.distance.toUpperCase()}
+            </p>
+          </div>
+          <div className="my-8">
+            <p className="subheading2 text-secondary">EST. TRAVEL TIME</p>
+            <p className="subheading1 text-three mt-2">
+              {selectedDestinationData?.travel.toUpperCase()}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
