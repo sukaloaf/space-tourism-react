@@ -90,23 +90,23 @@ li {
 /* Font size for tablet */
 @media (max-width: 1024px) {
   h2 {
-    font-size: 6.25rem;
+    font-size: 5rem;
     line-height: 1;
   }
 
   h3 {
-    font-size: 3.5rem;
-    line-height: 1;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 
   h4 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   h5 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     letter-spacing: 0.25em;
   }
 
@@ -146,13 +146,13 @@ li {
   }
 
   h3 {
-    font-size: 3.5rem;
-    line-height: 1;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   h4 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   h5 {

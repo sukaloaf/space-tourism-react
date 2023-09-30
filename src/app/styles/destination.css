@@ -9,11 +9,13 @@
 @media (max-width: 1024px) {
   .background-container {
     background-image: url(../../assets/destination/background-destination-tablet.jpg);
+    height: max-content;
   }
 }
 
 @media (max-width: 640px) {
   .background-container {
     background-image: url(../../assets/destination/background-destination-mobile.jpg);
+    height: max-content;
   }
 }
