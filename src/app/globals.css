@@ -211,8 +211,3 @@ li {
   opacity: 1;
   transform: scale(1.5);
 }
-
-/* Other */
-.active {
-  color: red;
-}
