@@ -21,7 +21,7 @@ export default function Crew() {
     <div className="background-container">
       <Navbar />
       <div className="flex flex-col items-center mt-8">
-        <div className="md:w-full md:pl-12 lg:pl-44 lg:pt-20">
+        <div className="md:w-full md:pl-12 lg:pl-44">
           <h5 className="text-three">
             <span className="text-three/25 mr-3 font-extrabold">02</span>MEET
             YOUR CREW
