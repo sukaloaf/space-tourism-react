@@ -21,27 +21,27 @@ export default function Crew() {
     <div className="background-container">
       <Navbar />
       <div className="flex flex-col items-center mt-8">
-        <div className="md:w-full md:pl-12">
+        <div className="md:w-full md:pl-12 lg:pl-44 lg:pt-20">
           <h5 className="text-three">
             <span className="text-three/25 mr-3 font-extrabold">02</span>MEET
             YOUR CREW
           </h5>
         </div>
-        <div className="w-full md:flex md:flex-col-reverse lg:flex-row-reverse lg:justify-evenly">
+        <div className="w-full md:flex md:flex-col-reverse lg:flex-row-reverse lg:justify-end">
           <div className="flex justify-center mt-10">
             <Image
               src={selectedImageSource}
               alt="crew member"
               width={750}
               height={750}
-              className="h-56 w-auto md:h-[525px] md:absolute md:bottom-0 lg:h-[632px]"
+              className="h-56 w-auto md:h-[525px] md:absolute md:bottom-0 lg:h-[632px] lg:left-[60%] lg:max-w-[576px]"
             />
           </div>
           <div className="md:flex md:flex-col-reverse lg:w-1/2 lg:justify-center">
             <div className="flex justify-center">
               <hr className="h-px w-10/12 bg-three/25 border-0 md:hidden" />
             </div>
-            <div className="my-8 flex justify-evenly m-auto">
+            <div className="my-8 flex justify-evenly m-auto lg:justify-start lg:m-0 lg:pl-44 lg:pt-20">
               <ul className="button-list flex gap-4">
                 {data.crew.map((crewMember, index) => (
                   <li key={index}>
@@ -58,14 +58,14 @@ export default function Crew() {
                 ))}
               </ul>
             </div>
-            <div className="flex flex-col md:mt-10">
-              <h4 className="text-three/50 text-center md:my-2">
+            <div className="flex flex-col md:mt-10 lg:pl-44 lg:pt-24">
+              <h4 className="text-three/50 text-center md:my-2 lg:text-start">
                 {currentCrewMember.role.toUpperCase()}
               </h4>
-              <h3 className="text-three text-center">
+              <h3 className="text-three text-center lg:text-start lg:my-4">
                 {currentCrewMember.name.toUpperCase()}
               </h3>
-              <p className="body-text text-secondary text-center px-10 mt-3 md:px-40">
+              <p className="body-text text-secondary text-center px-10 mt-3 md:px-40 lg:text-start lg:p-0 lg:pr-24">
                 {currentCrewMember.bio}
               </p>
             </div>
